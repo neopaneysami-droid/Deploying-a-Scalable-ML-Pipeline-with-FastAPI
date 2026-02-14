@@ -1,6 +1,17 @@
 import numpy as np
+import pandas as pd
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 
+
+def load_data(path: str) -> pd.DataFrame:
+    """
+    Load census data from a CSV file.
+    Args:
+        path (str): The file path to the CSV file.
+    Returns:
+        pd.DataFrame: Loaded data as a pandas DataFrame.
+    """
+    return pd.read_csv(path)
 
 def process_data(
     X, categorical_features=[], label=None, training=True, encoder=None, lb=None
